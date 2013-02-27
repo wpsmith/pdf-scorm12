@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>COURSETITLE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script type="text/javascript" src="js/APIWrapper.js"></script>
+<script>
+
+function scoStart()
+{
+	doLMSInitialize();
+	doLMSSetValue("cmi.core.lesson_status","completed");
+	doLMSCommit();
+}
+
+function scoEnd()
+{
+	doLMSCommit();
+	doLMSSetValue("cmi.core.exit","suspend");
+	doLMSFinish();
+}
+</script>
+</head>
+
+<body onLoad="scoStart()" onUnload="scoEnd()">
+SCORM Run-Time Data Model
+</body>
+</html>
